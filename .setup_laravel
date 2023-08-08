@@ -2,6 +2,8 @@
 cd ~
 sudo snap install curl
 sudo apt install net-tools
+sudo apt update
+sudo apt upgrade
 
 ##Install XAMPP (link: https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.2.4/xampp-linux-x64-8.2.4-0-installer.run/download)
 cd ~/Downloads
