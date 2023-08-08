@@ -48,11 +48,23 @@ cd LaravelProject
 npm install
 composer install
 php artisan key:generate
+
+##Config
+cd ~
+mkdir /opt/lampp/htdocs/LaravelProject/resources/scss
+touch /opt/lampp/htdocs/LaravelProject/resources/scss/app.scss
+ln -s /opt/lampp/htdocs/LaravelProject/storage/app/public /opt/lampp/htdocs/LaravelProject/public/storage
+cd /opt/lampp/htdocs/LaravelProject
+npm install sass
+
+##Open server
 cd ~
 sudo chmod 755 /opt/lampp/phpmyadmin/config.inc.php
 sudo /opt/lampp/lampp start
 cd /opt/lampp/htdocs/LaravelProject
 echo "+-------------------------------------------------+"
 echo "|Setup Laravel Successfully _ Made by Le Hoang Cau|"
+echo "|Web-Server: [http://127.0.0.1:8000]              |"
+echo "|Phpmyadmin: [http://127.0.0.1/phpmyadmin]        |"
 echo "+-------------------------------------------------+"
 php artisan serve
