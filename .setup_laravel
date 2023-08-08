@@ -1,0 +1,58 @@
+cd ~
+
+##Install XAMPP (link: https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.2.4/xampp-linux-x64-8.2.4-0-installer.run/download)
+sudo apt install net-tools
+cd ~/Downloads
+chmod 755 xampp-linux-x64-8.2.4-0-installer.run
+sudo ./xampp-linux-x64-8.2.4-0-installer.run
+
+##Install PHP
+cd ~
+sudo apt install php-cli
+sudo apt install php-xml
+sudo apt install php-curl
+
+##Install COMPOSER
+cd ~
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+
+##Install GIT
+cd ~
+sudo apt-get install git
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
+
+##Install NODEJS & NPM
+cd ~
+sudo apt install node
+sudo apt install npm
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n latest
+sudo chmod o=rwx -R /usr/local/lib/node_modules
+sudo chmod o=rwx -R /usr/local/bin
+npm install npm@latest -g
+
+##Create project
+cd ~
+sudo chmod o=rwx -R /opt/lampp
+rm -rf /opt/lampp/htdocs/*
+cd /opt/lampp/htdocs
+composer create-project laravel/laravel LaravelProject
+cd LaravelProject
+npm install
+composer install
+php artisan key:generate
+cd ~
+sudo chmod 755 /opt/lampp/phpmyadmin/config.inc.php
+sudo /opt/lampp/lampp start
+cd /opt/lampp/htdocs/LaravelProject
+echo "+-------------------------------------------------+"
+echo "|Setup Laravel Successfully _ Made by Le Hoang Cau|"
+echo "+-------------------------------------------------+"
+php artisan serve
