@@ -15,3 +15,4 @@ echo "|--> Stop-server:                                1hc stop-server  |"
 echo "|                                                                 |"
 echo "+-----------------------------------------------------------------+"
 rm -rf Laravel_setup
+cd ~
