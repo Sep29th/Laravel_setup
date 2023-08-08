@@ -112,11 +112,12 @@ echo "|--> Source-project: [/opt/lampp/htdocs/LaravelProject]   |"
 echo "|                                                         |"
 echo "+---------------------------------------------------------+"
 php artisan serve
-elif [ "$1" == "start-server" ]; then
+elif [ "$1" == "start" ]; then
     sudo /opt/lampp/lampp start
     php artisan serve
-elif [ "$1" == "stop-server" ]; then
+elif [ "$1" == "stop" ]; then
     sudo /opt/lampp/lampp stop
+    echo "Successfully"
 else
     echo "Unknown command: $1"
 fi
