@@ -1,0 +1,119 @@
+#!/bin/bash
+
+if [ "$1" == "new" ]; then
+    cd ~
+    cd /opt/lampp/htdocs
+composer create-project laravel/laravel NewProject
+cd NewProject
+npm install
+composer install
+php artisan key:generate
+cd ~
+mkdir /opt/lampp/htdocs/NewProject/resources/scss
+touch /opt/lampp/htdocs/NewProject/resources/scss/app.scss
+ln -s /opt/lampp/htdocs/NewProject/storage/app/public /opt/lampp/htdocs/NewProject/public/storage
+cd /opt/lampp/htdocs/NewProject
+npm install sass
+cd ~
+sudo /opt/lampp/lampp start
+cd /opt/lampp/htdocs/NewProject
+echo "+---------------------------------------------------------+"
+echo "|.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.|"
+echo "| Create New Laravel Successfully _ Made by Le Hoang Cau  |"
+echo "|                                                         |"
+echo "|--> Web-Server:     [http://127.0.0.1:8000]              |"
+echo "|                                                         |"
+echo "|--> Phpmyadmin:     [http://127.0.0.1/phpmyadmin]        |"
+echo "|                                                         |"
+echo "|--> Source-project: [/opt/lampp/htdocs/NewProject]       |"
+echo "|                                                         |"
+echo "+---------------------------------------------------------+"
+php artisan serve
+elif [ "$1" == "create" ]; then
+    ##Require
+cd ~
+sudo snap install curl
+sudo apt install net-tools
+sudo apt update
+sudo apt upgrade
+
+##Install XAMPP (link: https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.2.4/xampp-linux-x64-8.2.4-0-installer.run/download)
+cd ~/Downloads
+wget https://udomain.dl.sourceforge.net/project/xampp/XAMPP%20Linux/8.2.4/xampp-linux-x64-8.2.4-0-installer.run
+chmod 755 xampp-linux-x64-8.2.4-0-installer.run
+sudo ./xampp-linux-x64-8.2.4-0-installer.run
+
+##Install PHP
+cd ~
+sudo apt install php-cli
+sudo apt install php-xml
+sudo apt install php-curl
+
+##Install COMPOSER
+cd ~
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+
+##Install GIT
+cd ~
+sudo apt-get install git
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
+
+##Install NODEJS & NPM
+cd ~
+sudo apt install node
+sudo apt install npm
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n latest
+sudo chmod o=rwx -R /usr/local/lib/node_modules
+sudo chmod o=rwx -R /usr/local/bin
+npm install npm@latest -g
+
+##Create project
+cd ~
+sudo chmod o=rwx -R /opt/lampp
+rm -rf /opt/lampp/htdocs/*
+cd /opt/lampp/htdocs
+composer create-project laravel/laravel LaravelProject
+cd LaravelProject
+npm install
+composer install
+php artisan key:generate
+
+##Config
+cd ~
+rm -rf Laravel_setup
+rm -rf Downloads/xampp-linux-x64-8.2.4-0-installer.run
+mkdir /opt/lampp/htdocs/LaravelProject/resources/scss
+touch /opt/lampp/htdocs/LaravelProject/resources/scss/app.scss
+ln -s /opt/lampp/htdocs/LaravelProject/storage/app/public /opt/lampp/htdocs/LaravelProject/public/storage
+cd /opt/lampp/htdocs/LaravelProject
+npm install sass
+
+##Open server
+cd ~
+sudo chmod 755 /opt/lampp/phpmyadmin/config.inc.php
+sudo /opt/lampp/lampp start
+cd /opt/lampp/htdocs/LaravelProject
+echo "+---------------------------------------------------------+"
+echo "|.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.|"
+echo "|    Setup Laravel Successfully _ Made by Le Hoang Cau    |"
+echo "|                                                         |"
+echo "|--> Web-Server:     [http://127.0.0.1:8000]              |"
+echo "|                                                         |"
+echo "|--> Phpmyadmin:     [http://127.0.0.1/phpmyadmin]        |"
+echo "|                                                         |"
+echo "|--> Source-project: [/opt/lampp/htdocs/LaravelProject]   |"
+echo "|                                                         |"
+echo "+---------------------------------------------------------+"
+php artisan serve
+else
+    echo "Unknown command: $1"
+fi
+
