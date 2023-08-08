@@ -116,7 +116,7 @@ elif [ "$1" == "start-server" ]; then
     sudo /opt/lampp/lampp start
     php artisan server
 elif [ "$1" == "stop-server" ]; then
-    sudo /opt/lampp/lampp start
+    sudo /opt/lampp/lampp stop
 else
     echo "Unknown command: $1"
 fi
