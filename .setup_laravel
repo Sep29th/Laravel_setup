@@ -7,6 +7,7 @@ sudo apt upgrade
 
 ##Install XAMPP (link: https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.2.4/xampp-linux-x64-8.2.4-0-installer.run/download)
 cd ~/Downloads
+wget https://udomain.dl.sourceforge.net/project/xampp/XAMPP%20Linux/8.2.4/xampp-linux-x64-8.2.4-0-installer.run
 chmod 755 xampp-linux-x64-8.2.4-0-installer.run
 sudo ./xampp-linux-x64-8.2.4-0-installer.run
 
@@ -55,6 +56,7 @@ php artisan key:generate
 
 ##Config
 cd ~
+rm -rf Downloads/xampp-linux-x64-8.2.4-0-installer.run
 mkdir /opt/lampp/htdocs/LaravelProject/resources/scss
 touch /opt/lampp/htdocs/LaravelProject/resources/scss/app.scss
 ln -s /opt/lampp/htdocs/LaravelProject/storage/app/public /opt/lampp/htdocs/LaravelProject/public/storage
