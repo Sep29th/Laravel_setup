@@ -1,6 +1,8 @@
 cd ~
 sudo mkdir -p /usr/local/bin
 sudo cp -r Laravel_setup/1hc /usr/local/bin
+cd ~
+sudo chmod +x /usr/local/bin/1hc
 echo "+-----------------------------------------------------------------+"
 echo "|.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.|"
 echo "|     Setup Laravel Tools Successfully _ Made by Le Hoang Cau     |"
