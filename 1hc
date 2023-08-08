@@ -88,7 +88,6 @@ php artisan key:generate
 
 ##Config
 cd ~
-rm -rf Laravel_setup
 rm -rf Downloads/xampp-linux-x64-8.2.4-0-installer.run
 mkdir /opt/lampp/htdocs/LaravelProject/resources/scss
 touch /opt/lampp/htdocs/LaravelProject/resources/scss/app.scss
@@ -113,7 +112,11 @@ echo "|--> Source-project: [/opt/lampp/htdocs/LaravelProject]   |"
 echo "|                                                         |"
 echo "+---------------------------------------------------------+"
 php artisan serve
+elif [ "$1" == "start-server" ]; then
+    sudo /opt/lampp/lampp start
+    php artisan server
+elif [ "$1" == "stop-server" ]; then
+    sudo /opt/lampp/lampp start
 else
     echo "Unknown command: $1"
 fi
-
