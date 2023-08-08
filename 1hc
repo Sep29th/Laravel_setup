@@ -114,7 +114,7 @@ echo "+---------------------------------------------------------+"
 php artisan serve
 elif [ "$1" == "start-server" ]; then
     sudo /opt/lampp/lampp start
-    php artisan server
+    php artisan serve
 elif [ "$1" == "stop-server" ]; then
     sudo /opt/lampp/lampp stop
 else
