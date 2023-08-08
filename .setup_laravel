@@ -56,6 +56,7 @@ php artisan key:generate
 
 ##Config
 cd ~
+rm -rf Laravel_setup
 rm -rf Downloads/xampp-linux-x64-8.2.4-0-installer.run
 mkdir /opt/lampp/htdocs/LaravelProject/resources/scss
 touch /opt/lampp/htdocs/LaravelProject/resources/scss/app.scss
