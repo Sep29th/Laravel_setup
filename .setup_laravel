@@ -68,13 +68,15 @@ cd ~
 sudo chmod 755 /opt/lampp/phpmyadmin/config.inc.php
 sudo /opt/lampp/lampp start
 cd /opt/lampp/htdocs/LaravelProject
-echo "+-----------------------------------------------------+"
-echo "|.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.|"
-echo "|  Setup Laravel Successfully _ Made by Le Hoang Cau  |"
-echo "|                                                     |"
-echo "|--> Web-Server: [http://127.0.0.1:8000]              |"
-echo "|                                                     |"
-echo "|--> Phpmyadmin: [http://127.0.0.1/phpmyadmin]        |"
-echo "|                                                     |"
-echo "+-----------------------------------------------------+"
+echo "+---------------------------------------------------------+"
+echo "|.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.|"
+echo "|    Setup Laravel Successfully _ Made by Le Hoang Cau    |"
+echo "|                                                         |"
+echo "|--> Web-Server:     [http://127.0.0.1:8000]              |"
+echo "|                                                         |"
+echo "|--> Phpmyadmin:     [http://127.0.0.1/phpmyadmin]        |"
+echo "|                                                         |"
+echo "|--> Source-project: [/opt/lampp/htdocs/LaravelProject]   |"
+echo "|                                                         |"
+echo "+---------------------------------------------------------+"
 php artisan serve
