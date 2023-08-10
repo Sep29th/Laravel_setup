@@ -73,6 +73,8 @@ echo "|--> Start-server(run in source_project_folder): 1hc start        |"
 echo "|                                                                 |"
 echo "|--> Stop-server:                                1hc stop         |"
 echo "|                                                                 |"
+echo "|--> Show-command:                               1hc help         |"
+echo "|                                                                 |"
 echo "+-----------------------------------------------------------------+"
 rm -rf Laravel_setup
 cd ~
