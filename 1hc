@@ -42,6 +42,19 @@ elif [ "$1" == "stop" ]; then
     sudo /opt/lampp/lampp stop
     echo "Successfully"
     exit 1
+elif [ "$1" == "help" ]; then
+echo "+---------------------------------------------------------+"
+echo "|.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.*.^.|"
+echo "| Create New Laravel Successfully _ Made by Le Hoang Cau  |"
+echo "|                                                         |"
+echo "|--> 1hc new:                          create new project |"
+echo "|                                                         |"
+echo "|--> 1hc start(run in source_project): start server       |"
+echo "|                                                         |"
+echo "|--> 1hc stop:                         stop server        |"
+echo "|                                                         |"
+echo "+---------------------------------------------------------+"
+    exit 1
 else
     echo "Unknown command: $1"
     exit 1
