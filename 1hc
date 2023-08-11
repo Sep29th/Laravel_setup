@@ -15,8 +15,8 @@ php artisan key:generate
 cd ~
 mkdir /opt/lampp/htdocs/NewProject/resources/scss
 touch /opt/lampp/htdocs/NewProject/resources/scss/app.scss
-ln -s /opt/lampp/htdocs/NewProject/storage/app/public /opt/lampp/htdocs/NewProject/public/storage
 cd /opt/lampp/htdocs/NewProject
+php artisan storage:link
 npm install sass
 cd ~
 sudo /opt/lampp/lampp start
